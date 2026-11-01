@@ -17,6 +17,8 @@ import {
   ShieldCheck,
   Sparkles,
   Terminal,
+  LockKeyhole,
+  GitPullRequest,
   Workflow,
 } from "lucide-react";
 import CopyButton from "@/components/copy-button";
@@ -140,9 +142,32 @@ export default function Home() {
           <div className="code-card"><div className="code-header"><span><Code2 size={14} /> quick-start.ts</span><CopyButton text={codeExample} /></div><pre><code>{codeExample.split("\n").map((line, i) => <span key={i} className="code-line"><i>{String(i + 1).padStart(2, "0")}</i><span>{line}</span></span>)}</code></pre></div>
         </section>
 
+        <section className="section container proof-section">
+          <div className="section-heading-row"><div><p className="kicker">See the output</p><h2>From README prose<br /><span>to usable data.</span></h2></div><Link className="text-link" href="/examples">Explore examples <ArrowRight size={14} /></Link></div>
+          <div className="before-after">
+            <div className="example-pane"><div className="pane-label"><span>README.md</span><span className="pane-muted">authored content</span></div><p className="readme-title">RepoSync</p><p className="readme-copy">Turn GitHub repositories into portfolio-ready data. Discover projects, extract metadata, and keep your project list synchronized.</p><div className="readme-heading">## Features</div><div className="readme-list">- GitHub repository discovery<br />- README metadata extraction<br />- JSON and TypeScript output</div></div>
+            <div className="example-divider"><ArrowRight size={17} /></div>
+            <div className="example-pane output-pane"><div className="pane-label"><span>projects.json</span><span className="pane-muted">generated output</span></div><pre>{`{
+  "title": "RepoSync",
+  "description": "Turn GitHub repositories into
+    portfolio-ready data.",
+  "technologies": ["TypeScript", "Node.js"],
+  "features": ["Repository discovery",
+    "Metadata extraction"],
+  "source": "github"
+}`}</pre></div>
+          </div>
+        </section>
+
+        <section className="section container trust-section">
+          <div className="section-heading-row"><div><p className="kicker">Built for trust</p><h2>Transparent by<br /><span>default.</span></h2></div><p className="section-side-copy">The details that matter when project data touches your private repositories and production workflows.</p></div>
+          <div className="trust-grid"><article><LockKeyhole size={19} /><h3>Your token stays private</h3><p>Tokens are used for GitHub access and never included in normalized project output. Keep them in environment variables.</p><a href={`${githubUrl}#error-handling`} target="_blank" rel="noreferrer">Read the security notes <ExternalLink size={13} /></a></article><article><GitPullRequest size={19} /><h3>Review before you sync</h3><p>Preview normalized projects and deterministic quality findings before writing generated files or committing changes.</p><Link href="/docs#cli">See the workflow <ArrowRight size={13} /></Link></article><article><ShieldCheck size={19} /><h3>Open implementation</h3><p>Read the source, inspect the error contracts, and verify exactly how discovery and output work.</p><a href={githubUrl} target="_blank" rel="noreferrer">Inspect the repository <ExternalLink size={13} /></a></article></div>
+        </section>
+
         <section className="section container ecosystem-section">
           <div className="section-heading-row"><div><p className="kicker">The ecosystem</p><h2>Small packages.<br /><span>Clear boundaries.</span></h2></div><p className="section-side-copy">Use the engine directly, or bring the complete workflow to your terminal.</p></div>
           <div className="package-grid"><a className="package-card" href="https://www.npmjs.com/package/@reposync/core" target="_blank" rel="noreferrer"><div className="package-top"><span className="package-icon"><Boxes size={21} /></span><ExternalLink size={15} /></div><h3>@reposync/core</h3><p>The reusable TypeScript engine for discovery, extraction, normalization, quality, and output.</p><span className="package-link">View on npm <ArrowRight size={14} /></span></a><a className="package-card" href="https://www.npmjs.com/package/@reposync/cli" target="_blank" rel="noreferrer"><div className="package-top"><span className="package-icon"><Terminal size={21} /></span><ExternalLink size={15} /></div><h3>@reposync/cli</h3><p>A focused command-line interface for init, validate, preview, list, sync, and doctor.</p><span className="package-link">View on npm <ArrowRight size={14} /></span></a></div>
+          <div className="verified-facts"><span><Check size={13} /> MIT licensed</span><span><Check size={13} /> Node.js 24+</span><span><Check size={13} /> Version 2.0.1</span><span><Check size={13} /> Framework independent</span></div>
         </section>
 
         <section className="section container open-source-section">
