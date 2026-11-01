@@ -67,11 +67,13 @@ function Header() {
         <Logo />
         <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/#features">Features</Link>
+          <Link href="/getting-started">Get started</Link>
           <Link href="/docs">Documentation</Link>
+          <Link href="/developer">Developer</Link>
           <a href={githubUrl} target="_blank" rel="noreferrer">GitHub <ExternalLink size={12} /></a>
           <Link href="/roadmap">Roadmap</Link>
         </nav>
-        <Link className="button button-small button-accent" href="/docs">Get started <ArrowRight size={14} /></Link>
+        <Link className="button button-small button-accent" href="/getting-started">Start here <ArrowRight size={14} /></Link>
       </div>
     </header>
   );
@@ -182,5 +184,5 @@ export default function Home() {
 function ArrowUpRightIcon() { return <ExternalLink size={14} />; }
 
 function Footer() {
-  return <footer className="footer border-top"><div className="container footer-inner"><div><Logo /><p>GitHub repositories, understood.</p></div><div className="footer-links"><div><span>Explore</span><Link href="/docs">Documentation</Link><Link href="/roadmap">Roadmap</Link><Link href="/about">About</Link></div><div><span>Connect</span><a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a><a href="https://www.npmjs.com/package/@reposync/core" target="_blank" rel="noreferrer">npm packages</a><a href={`${githubUrl}/issues`} target="_blank" rel="noreferrer">Issues</a></div></div></div><div className="container footer-bottom"><span>© 2026 RepoSync</span><span>MIT License <span className="footer-separator">·</span> Open source software</span></div></footer>;
+  return <footer className="footer border-top"><div className="container footer-inner"><div><Logo /><p>GitHub repositories, understood.</p></div><div className="footer-links"><div><span>Explore</span><Link href="/getting-started">Getting started</Link><Link href="/docs">Documentation</Link><Link href="/examples">Examples</Link></div><div><span>People</span><Link href="/developer">Developer</Link><a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a><a href="https://prathamranka.in" target="_blank" rel="noreferrer">Personal website</a></div></div></div><div className="container footer-bottom"><span>© 2026 RepoSync</span><span>MIT License <span className="footer-separator">·</span> Open source software</span></div></footer>;
 }
